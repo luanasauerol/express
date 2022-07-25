@@ -15,18 +15,7 @@ routes.get('/:id/', (req, res) => {
     res.status(200).json(product);
 });
 
-function validatePrice(req, res, next) {
-    const { price } = req.body;
-
-    if (price && price >= 0) {
-        return next();
-    }
-
-    return res.status(400).send('Produto com preço inválido')
-}
-
-
-routes.post('/', validatePrice, (req, res) => {
+routes.post('/', (req, res) => {
     const content = req.body;
     products = [...products, content];
     return res.status(201).json(products);
@@ -50,7 +39,6 @@ routes.put('/:id', (req, res) => {
     res.status(200).json(products);
 
 });
-
 
 routes.delete('/:id', (req, res) => {
     const id = Number(req.params.id);
