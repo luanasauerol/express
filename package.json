@@ -77,6 +77,6 @@
   },
   "homepage": "https://github.com/luanasauerol/express#readme",
   "devDependencies": {
-    "nodemon": "^2.0.19"
+    "nodemon": "^1.10.2"
   }
 }
